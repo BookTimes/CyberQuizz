@@ -45,139 +45,189 @@ const instruct = `
 var i = 0;
 
 const askQn = function (i) {
+  // const qns = [
+  //   {
+  //     qn: "A hardware device/software program that filters all the packets of data that comes through a network, the internet, etc. is called:",
+  //     options: ["Cookies", "Antivirus", "Firewall", "Protocol"],
+  //   },
+  //   {
+  //     qn: "Internet and WWW (World Wide Web) are considered the same. Choose Suitable Option for Given Statement",
+  //     options: ["True", "False", "Partially True & False", "None"],
+  //   },
+  //   {
+  //     qn: "What is Netiquette?",
+  //     options: [
+  //       "Treat Others as badly as They Treat You",
+  //       "Be Polite Online & Others will do the Same",
+  //       "Etiquette for Netflix",
+  //       "None of the Above",
+  //     ],
+  //   },
+  //   {
+  //     qn: "Which of the following typically keeps tabs on every online activity the victim engages in, compiles all the data in the background, and sends it to a third party?",
+  //     options: ["Cookies", "Spyware", "Adware", "All of the Above"],
+  //   },
+  //   {
+  //     qn: "What tasks can a Computer perform?",
+  //     options: [
+  //       "Type Documents & send Emails",
+  //       "Internet Browsing",
+  //       "Store & Retrieve Info",
+  //       "All of the Above",
+  //     ],
+  //   },
+  //   {
+  //     qn: '"Data encryption is used to ensure confidentiality" Choose Suitable Option for Given Statement:',
+  //     options: ["True", "False", "None", "Partially True & False"],
+  //   },
+  //   {
+  //     qn: "Which of the following are Programming Languages?",
+  //     options: ["Python", "C++", "Java", "All of the Above"],
+  //   },
+  //   {
+  //     qn: "Which of these is something you should do if you are cyber bullied?",
+  //     options: [
+  //       "Don't Open/Read their Messages",
+  //       "Tell your Internet Service Provider",
+  //       "Tell a Trusted Adult about it",
+  //       "Keep it to yourself",
+  //     ],
+  //   },
+  //   {
+  //     qn: "HTTPS is a Protocol that means:",
+  //     options: [
+  //       "HyperText Transfer Protocol Secure",
+  //       "HyperTransfer Text Protocol Safety",
+  //       "HastyText Traversal Protocol Secure",
+  //       "None of the Above",
+  //     ],
+  //   },
+  //   {
+  //     qn: "In the World of CyberSecurity, What is CIA?",
+  //     options: [
+  //       "Commercial Investment Authority",
+  //       "Confidentiality, Integrity, and Availability",
+  //       "Central Investigative Authority",
+  //       "None of the Above",
+  //     ],
+  //   },
+  //   {
+  //     qn: "Copying of a web-page or website & storing that copy for the purpose of speeding up subsequent access is called:",
+  //     options: ["Downloading", "Browsing", "File Swapping", "Caching"],
+  //   },
+  //   {
+  //     qn: "In which Year was the Information Technology Act passed?",
+  //     options: ["2000", "1978", "2021", "2015"],
+  //   },
+  //   {
+  //     qn: "Cybercrime is criminal activity that targets/uses a computer, a computer network or a networked device & which doesn't include:",
+  //     options: ["Phishing", "Privacy Violation", "Bank Theft", "Data Breach"],
+  //   },
+  //   {
+  //     qn: "From the Given Statements, Which of the following IS not TRUE about HTTP?",
+  //     options: [
+  //       "URL Scheme Begins with 'http://'",
+  //       "Data is Encrypted before transmission",
+  //       "Prone to Eavesdropping & Data interception",
+  //       "Data is sent in Plain Text",
+  //     ],
+  //   },
+  //   {
+  //     qn: "From the Passwords listed below, which is the Strongest?",
+  //     options: ["!798$", "Aw12q3", "@1A5p$#2", "All of the Above"],
+  //   },
+  //   {
+  //     qn: "A VPN establishes a Digital Connection between the Computer & a Remote Server owned by the VPN Provider. What does VPN stand for?",
+  //     options: [
+  //       "Vast Private Network",
+  //       "Virtual Public Network",
+  //       "Virtual Private Network",
+  //       "Void Public Net",
+  //     ],
+  //   },
+  //   {
+  //     qn: "Which of the following is a Type of Cyber Security?",
+  //     options: [
+  //       "Application Security",
+  //       "Cloud Security",
+  //       "Network Security",
+  //       "All of the Above",
+  //     ],
+  //   },
+  //   {
+  //     qn: "A Black Hat Hacker Maliciously uses Hacking skills to breach confidential data. A White Hat Hacker performs Ethical Hacking for Common Good. Then, Which of these statements about a Grey Hat Hacker is False?",
+  //     options: [
+  //       "Their Behaviour is Unpredictable",
+  //       "Can use their skills for Common Good",
+  //       "Might become a Potential Threat at any time",
+  //       "No Similarity with Black Hat & White Hat Hackers",
+  //     ],
+  //   },
+  //   {
+  //     qn: "Which of the following is known as Malicious software?",
+  //     options: ["Illegal Ware", "Badware", "Malware", "Malicious Ware"],
+  //   },
+  //   {
+  //     qn: "Yahoo.inc Vs Akash Arora is a Famous Case relating to Which of the following?",
+  //     options: [
+  //       "Cyber Squatting",
+  //       "Cyber Stalking",
+  //       "Cyber Defamation",
+  //       "None of the Above",
+  //     ],
+  //   },
+  // ];
   const qns = [
     {
-      qn: "A hardware device/software program that filters all the packets of data that comes through a network, the internet, etc. is called:",
-      options: ["Cookies", "Antivirus", "Firewall", "Protocol"],
+      qn: "Which country is known as the 'Land of the Rising Sun'?",
+      options: ["China", "India", "Japan", "South Korea"],
     },
     {
-      qn: "Internet and WWW (World Wide Web) are considered the same. Choose Suitable Option for Given Statement",
-      options: ["True", "False", "Partially True & False", "None"],
+      qn: "The capital city of Russia is:",
+      options: ["Moscow", "St. Petersburg", "Kiev", "Berlin"],
     },
     {
-      qn: "What is Netiquette?",
-      options: [
-        "Treat Others as badly as They Treat You",
-        "Be Polite Online & Others will do the Same",
-        "Etiquette for Netflix",
-        "None of the Above",
-      ],
+      qn: "Which international organization promotes economic cooperation and development among countries?",
+      options: ["United Nations", "World Bank", "International Monetary Fund (IMF)", "World Trade Organization (WTO)"],
     },
     {
-      qn: "Which of the following typically keeps tabs on every online activity the victim engages in, compiles all the data in the background, and sends it to a third party?",
-      options: ["Cookies", "Spyware", "Adware", "All of the Above"],
+      qn: "The Berlin Wall, which fell in 1989, was a symbol of the division between which two ideological blocs?",
+      options: ["NATO and Warsaw Pact", "East and West Germany", "Communism and Capitalism", "Soviet Union and United States"],
     },
     {
-      qn: "What tasks can a Computer perform?",
-      options: [
-        "Type Documents & send Emails",
-        "Internet Browsing",
-        "Store & Retrieve Info",
-        "All of the Above",
-      ],
+      qn: "Which country is often referred to as the 'Middle Kingdom'?",
+      options: ["China", "Egypt", "India", "Iran"],
     },
     {
-      qn: '"Data encryption is used to ensure confidentiality" Choose Suitable Option for Given Statement:',
-      options: ["True", "False", "None", "Partially True & False"],
+      qn: "The European Union (EU) originated as an economic cooperation organization. Which of the following treaties marked the establishment of the EU?",
+      options: ["Maastricht Treaty", "Lisbon Treaty", "Treaty of Rome", "Treaty of Paris"],
     },
     {
-      qn: "Which of the following are Programming Languages?",
-      options: ["Python", "C++", "Java", "All of the Above"],
+      qn: "What is the primary function of the North Atlantic Treaty Organization (NATO)?",
+      options: ["Economic Cooperation", "Collective Defense", "Climate Change Mitigation", "Humanitarian Aid"],
     },
     {
-      qn: "Which of these is something you should do if you are cyber bullied?",
-      options: [
-        "Don't Open/Read their Messages",
-        "Tell your Internet Service Provider",
-        "Tell a Trusted Adult about it",
-        "Keep it to yourself",
-      ],
+      qn: "Which strait separates Africa from Europe?",
+      options: ["Strait of Gibraltar", "Bosphorus Strait", "Strait of Malacca", "Hormuz Strait"],
     },
     {
-      qn: "HTTPS is a Protocol that means:",
-      options: [
-        "HyperText Transfer Protocol Secure",
-        "HyperTransfer Text Protocol Safety",
-        "HastyText Traversal Protocol Secure",
-        "None of the Above",
-      ],
+      qn: "The Himalayan mountain range separates which two countries?",
+      options: ["India and China", "Pakistan and Afghanistan", "Nepal and Bhutan", "Russia and Mongolia"],
     },
     {
-      qn: "In the World of CyberSecurity, What is CIA?",
-      options: [
-        "Commercial Investment Authority",
-        "Confidentiality, Integrity, and Availability",
-        "Central Investigative Authority",
-        "None of the Above",
-      ],
-    },
-    {
-      qn: "Copying of a web-page or website & storing that copy for the purpose of speeding up subsequent access is called:",
-      options: ["Downloading", "Browsing", "File Swapping", "Caching"],
-    },
-    {
-      qn: "In which Year was the Information Technology Act passed?",
-      options: ["2000", "1978", "2021", "2015"],
-    },
-    {
-      qn: "Cybercrime is criminal activity that targets/uses a computer, a computer network or a networked device & which doesn't include:",
-      options: ["Phishing", "Privacy Violation", "Bank Theft", "Data Breach"],
-    },
-    {
-      qn: "From the Given Statements, Which of the following IS not TRUE about HTTP?",
-      options: [
-        "URL Scheme Begins with 'http://'",
-        "Data is Encrypted before transmission",
-        "Prone to Eavesdropping & Data interception",
-        "Data is sent in Plain Text",
-      ],
-    },
-    {
-      qn: "From the Passwords listed below, which is the Strongest?",
-      options: ["!798$", "Aw12q3", "@1A5p$#2", "All of the Above"],
-    },
-    {
-      qn: "A VPN establishes a Digital Connection between the Computer & a Remote Server owned by the VPN Provider. What does VPN stand for?",
-      options: [
-        "Vast Private Network",
-        "Virtual Public Network",
-        "Virtual Private Network",
-        "Void Public Net",
-      ],
-    },
-    {
-      qn: "Which of the following is a Type of Cyber Security?",
-      options: [
-        "Application Security",
-        "Cloud Security",
-        "Network Security",
-        "All of the Above",
-      ],
-    },
-    {
-      qn: "A Black Hat Hacker Maliciously uses Hacking skills to breach confidential data. A White Hat Hacker performs Ethical Hacking for Common Good. Then, Which of these statements about a Grey Hat Hacker is False?",
-      options: [
-        "Their Behaviour is Unpredictable",
-        "Can use their skills for Common Good",
-        "Might become a Potential Threat at any time",
-        "No Similarity with Black Hat & White Hat Hackers",
-      ],
-    },
-    {
-      qn: "Which of the following is known as Malicious software?",
-      options: ["Illegal Ware", "Badware", "Malware", "Malicious Ware"],
-    },
-    {
-      qn: "Yahoo.inc Vs Akash Arora is a Famous Case relating to Which of the following?",
-      options: [
-        "Cyber Squatting",
-        "Cyber Stalking",
-        "Cyber Defamation",
-        "None of the Above",
-      ],
+      qn: "What is the capital city of South Africa?",
+      options: ["Johannesburg", "Pretoria", "Cape Town", "Durban"],
     },
   ];
-  expectedLevelShufflingPncOnly(qns, anLog);
+  
+  // Print the questions
+  geoPoliticsQuestions.forEach((question, index) => {
+    console.log(`Question ${index + 1}: ${question.qn}`);
+    console.log("Options:", question.options.join(", "));
+    console.log("\n");
+  });
+  
+  // expectedLevelShufflingPncOnly(qns, anLog);
   var w = 0;
   document.getElementById("let").innerHTML = ` <div class="row ">
     <div class="col-8">
@@ -378,7 +428,7 @@ const endExam = function () {
 };
 
 const j = setInterval(() => {
-  var endTime = new Date("2024-01-21T22:10:00");
+  var endTime = new Date("2024-01-23T12:15:00");
 
   var currentTime = new Date();
 
@@ -388,25 +438,18 @@ const j = setInterval(() => {
 
   var minutes = Math.floor(secondsDifference / 60);
   var seconds = secondsDifference % 60;
-  if (minutes > 0 && seconds > 0) {
+  if (minutes > 0 || seconds > 0) {
     document.getElementById("time").innerText = minutes + ":" + seconds;
     if (minutes < 5) {
       document.getElementById("time").style.color = "red";
     }
-    if (minutes == 0 && seconds == 0) {
-      endExam();
-      clearInterval(j);
-    }
-  } else if (minutes > 0 && seconds < 0) {
+  } else if (minutes == 0 && seconds == 0) {
+    endExam();
     clearInterval(j);
-    document.getElementById("let").innerHTML = "";
   }
 }, 1000);
 
-
-
-
-//algorithm not upto level borderline errors there you please dont use it unless its an emergency 
+//algorithm not upto level borderline errors there you please dont use it unless its an emergency
 function expectedLevelShufflingPncOnly(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     throw new Error("Arrays must have the same length");
@@ -428,3 +471,4 @@ function expectedLevelShufflingPncOnly(arr1, arr2) {
   arr1.push(...shuffledArr1);
   arr2.push(...shuffledArr2);
 }
+
