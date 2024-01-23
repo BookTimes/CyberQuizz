@@ -221,11 +221,7 @@ const askQn = function (i) {
   ];
   
   // Print the questions
-  geoPoliticsQuestions.forEach((question, index) => {
-    console.log(`Question ${index + 1}: ${question.qn}`);
-    console.log("Options:", question.options.join(", "));
-    console.log("\n");
-  });
+
   
   // expectedLevelShufflingPncOnly(qns, anLog);
   var w = 0;
